@@ -6,12 +6,20 @@
     "name": "Snuffy"
   },
   "dependencies": {
+    "codejar": "^3.3.0",
     "css-loader": "^3.6.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "hooker": "^0.2.3",
     "mathjs": "^7.0.1",
     "mini-css-extract-plugin": "^0.9.0",
+    "net": "^1.0.2",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "prismjs": "^1.23.0",
+    "request": "^2.88.2",
     "style-loader": "^1.2.1",
     "terser-webpack-plugin": "^4.0.1",
+    "vm.js": "0.0.6",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"

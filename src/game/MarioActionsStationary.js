@@ -1,4 +1,4 @@
-import * as Mario from "./Mario"
+import { MarioInstance as Mario } from "./Mario"
 import { stationary_ground_step } from "./MarioStep"
 import { StartGroup } from "../goddard/dynlists/dynlist_macros"
 

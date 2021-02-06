@@ -10,7 +10,7 @@ import { sins, coss, int16 } from "../utils"
 import { GeoRendererInstance as GeoRenderer } from "../engine/GeoRenderer"
 import { SURFACE_BURNING, SURFACE_DEATH_PLANE } from "../include/surface_terrains"
 import { ATTACK_PUNCH, INT_STATUS_WAS_ATTACKED, INT_STATUS_INTERACTED, INT_STATUS_TOUCHED_BOB_OMB } from "./Interaction"
-import { ACT_GROUND_POUND_LAND } from "./Mario"
+import { MarioInstance as Mario } from "./Mario"
 import { gLinker } from "./Linker"
 import * as Gbi from "../include/gbi"
 
@@ -667,7 +667,7 @@ export const cur_obj_move_standard = (steepSlopeAngleDegrees) => {
 
 export const cur_obj_is_mario_ground_pounding_platform = () => {
     if (ObjectListProc.gMarioObject.platform == ObjectListProc.gCurrentObject) {
-        if (ObjectListProc.gMarioObject.marioState.action == ACT_GROUND_POUND_LAND) {
+        if (ObjectListProc.gMarioObject.marioState.action == Mario.ACT_GROUND_POUND_LAND) {
             return 1
         }
     }

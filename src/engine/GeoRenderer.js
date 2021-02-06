@@ -3,7 +3,7 @@ import * as MathUtil from "./math_util"
 import { GameInstance as Game } from "../game/Game"
 import * as Gbi from "../include/gbi"
 import { CameraInstance as Camera } from "../game/Camera"
-import * as Mario from "../game/Mario"
+import { MarioInstance as Mario } from "../game/Mario"
 import { create_shadow_below_xyz } from "../game/Shadow"
 
 const canvas = document.querySelector('#gameCanvas')

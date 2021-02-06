@@ -2,7 +2,7 @@ import { GoddardRendererInstance as GoddardRenderer } from "../goddard/GoddardRe
 import { GameInstance as Game } from "./Game"
 import { GEO_CONTEXT_RENDER, GEO_CONTEXT_CREATE } from "../engine/graph_node"
 import { GeoRendererInstance as GeoRenderer } from "../engine/GeoRenderer"
-import * as Mario from "./Mario"
+import { MarioInstance as Mario } from "./Mario"
 
 class MarioMisc {
     constructor() {

@@ -1,4 +1,4 @@
-import * as Mario from "./Mario"
+import { MarioInstance as Mario } from "./Mario"
 import * as MarioConstants from "../include/mario_constants"
 import { perform_air_step, mario_bonk_reflection } from "./MarioStep"
 import { approach_number, atan2s } from "../engine/math_util"

@@ -1,7 +1,7 @@
 import { ObjectListProcessorInstance as ObjectListProc } from "../ObjectListProcessor"
 import { oPosY, oTimer } from "../../include/object_constants"
 import { LevelUpdateInstance as LevelUpdate } from "../LevelUpdate"
-import { MARIO_PUNCHING } from "../Mario"
+import { MarioInstance as Mario } from "../Mario"
 import { cur_obj_push_mario_away } from "../ObjectHelpers"
 
 export const bhv_pole_base_loop = () => {
@@ -9,7 +9,7 @@ export const bhv_pole_base_loop = () => {
     if (o.rawData[oPosY] - 10.0 < ObjectListProc.gMarioObject.rawData[oPosY] &&
         ObjectListProc.gMarioObject.rawData[oPosY] < o.rawData[oPosY] + o.hitboxHeight + 30.0) {
         if (o.rawData[oTimer] > 10) {
-            if (!(LevelUpdate.gMarioState.action & MARIO_PUNCHING)) {
+            if (!(LevelUpdate.gMarioState.action & Mario.MARIO_PUNCHING)) {
                 cur_obj_push_mario_away(70.0)
             }
         }

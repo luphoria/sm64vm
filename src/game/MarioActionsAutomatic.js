@@ -1,4 +1,4 @@
-import * as Mario from "./Mario"
+import { MarioInstance as Mario } from "./Mario"
 import { oMarioPolePos, oPosX, oPosY, oPosZ, oMoveAnglePitch, oMoveAngleRoll, oMarioPoleYawVel, oInteractStatus } from "../include/object_constants"
 import { SurfaceCollisionInstance as SurfaceCollision } from "../engine/SurfaceCollision"
 import { approach_number } from "../engine/math_util"

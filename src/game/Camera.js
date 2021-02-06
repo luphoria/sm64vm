@@ -6,7 +6,7 @@ import { LEVEL_CASTLE_GROUNDS, LEVEL_BOB, LEVEL_CCM, LEVEL_PSS } from "../levels
 import { SurfaceCollisionInstance as SurfaceCollision } from "../engine/SurfaceCollision"
 import { atan2s } from "../engine/math_util"
 import * as MathUtil from "../engine/math_util"
-import { ACT_FLAG_METAL_WATER, ACT_FLAG_ON_POLE, ACT_FLAG_HANGING, ACT_RIDING_HOOT, ACT_LONG_JUMP, ACT_TOP_OF_POLE, ACT_SLEEPING, ACT_START_SLEEPING, ACT_DIVE } from "./Mario"
+import { MarioInstance as Mario } from "./Mario"
 import { oPosY } from "../include/object_constants"
 import { SURFACE_DEATH_PLANE } from "../include/surface_terrains"
 import { sins } from "../utils"
@@ -618,7 +618,7 @@ class Camera {
         const floorHeight = this.sMarioGeometry.currFloorHeight
         const waterHeight = -99999
 
-        if (!(this.gPlayerCameraState.action & ACT_FLAG_METAL_WATER)) {
+        if (!(this.gPlayerCameraState.action & Mario.ACT_FLAG_METAL_WATER)) {
             if (floorHeight < (waterHeight)) {
                 floorHeight = waterHeight
             }
@@ -626,7 +626,7 @@ class Camera {
 
         const marioObj = LevelUpdate.gMarioState
 
-        if (this.gPlayerCameraState.action & ACT_FLAG_ON_POLE) {
+        if (this.gPlayerCameraState.action & Mario.ACT_FLAG_ON_POLE) {
             const pole = marioObj.usedObj
             const poleHitboxHeight = pole.hitboxHeight
 
@@ -677,8 +677,8 @@ class Camera {
         pan[2] = 0
 
         // If mario is long jumping, or on a flag pole (but not at the top), then pan in the opposite direction
-        if (this.gPlayerCameraState.action == ACT_LONG_JUMP ||
-            (this.gPlayerCameraState.action != ACT_TOP_OF_POLE && (this.gPlayerCameraState.action & ACT_FLAG_ON_POLE))) {
+        if (this.gPlayerCameraState.action == Mario.ACT_LONG_JUMP ||
+            (this.gPlayerCameraState.action != Mario.ACT_LONG_JUMP && (this.gPlayerCameraState.action & Mario.ACT_FLAG_ON_POLE))) {
             pan[0] = -pan[0]
         }
 
@@ -973,11 +973,11 @@ class Camera {
         ///Poison Gas
 
 
-        if (this.gPlayerCameraState.action & ACT_FLAG_HANGING || this.gPlayerCameraState.action == ACT_RIDING_HOOT) {
+        if (this.gPlayerCameraState.action & Mario.ACT_FLAG_HANGING || this.gPlayerCameraState.action == Mario.ACT_RIDING_HOOT) {
             /// TODO hanging or riding
         }
 
-        if (this.gPlayerCameraState.action & ACT_FLAG_ON_POLE) {
+        if (this.gPlayerCameraState.action & Mario.ACT_FLAG_ON_POLE) {
             camFloorHeight = LevelUpdate.gMarioState.usedObj.rawData[oPosY] + 125
             if (this.gPlayerCameraState.pos[1] - 100 > camFloorHeight) {
                 camFloorHeight = this.gPlayerCameraState.pos[1] - 100
@@ -1128,7 +1128,7 @@ class Camera {
             //shake_camera_roll()
             //shake_camera_handheld()
 
-            if (this.gPlayerCameraState.action == ACT_DIVE && this.gLakituState.lastFrameAction != ACT_DIVE) {
+            if (this.gPlayerCameraState.action == Mario.ACT_LONG_JUMP && this.gLakituState.lastFrameAction != Mario.ACT_LONG_JUMP) {
                 this.set_camera_shake_from_hit(this.SHAKE_HIT_FROM_BELOW)
             }
 
@@ -1202,7 +1202,7 @@ class Camera {
     fov_default(m) {
         this.sStatusFlags &= ~CAM_FLAG_SLEEPING
 
-        if ((m.action == ACT_SLEEPING) || (m.action == ACT_START_SLEEPING)) {
+        if ((m.action == Mario.ACT_LONG_JUMP) || (m.action == Mario.ACT_LONG_JUMP)) {
             throw "sleeping"
         } else {
             const wrapper = { current: this.sFOVState.fov }

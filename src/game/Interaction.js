@@ -1,5 +1,6 @@
-import * as Mario from "./Mario"
+import { MarioInstance as Mario } from "./Mario"
 import { AreaInstance as Area } from "./Area"
+
 import * as MarioConstants from "../include/mario_constants"
 import { oInteractType, oInteractStatus, oMarioPoleUnk108, oMarioPoleYawVel, oMarioPolePos, oPosY, oInteractionSubtype, oDamageOrCoinValue, oPosX, oPosZ } from "../include/object_constants"
 import { atan2s } from "../engine/math_util"

@@ -1,4 +1,4 @@
-import * as Mario from "./Mario"
+import { MarioInstance as Mario } from "./Mario"
 import { perform_ground_step, stationary_ground_step } from "./MarioStep"
 
 const sPunchingForwardVelocities = [0, 1, 1, 2, 3, 5, 7, 10]

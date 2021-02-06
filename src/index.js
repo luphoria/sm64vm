@@ -3,6 +3,7 @@ import { checkForRom } from "./romTextureLoader.js"
 import { GameInstance as Game } from "./game/Game"
 import { playerInputUpdate } from "./player_input_manager"
 import { n64GfxProcessorInstance as GFX } from "./graphics/n64GfxProcessor"
+import { SM64vm } from "./vm/sm64vm.js"
 
 const send_display_list = (gfx_list) => { GFX.run(gfx_list) }
 
@@ -52,6 +53,8 @@ const on_anim_frame = (time) => {
 }
 
 const main_func = () => {
+    Object.sm64vm = new SM64vm();
+    // Object.sm64vm.start();
 
     /// WebGL class and n64GfxProcessor class are initialized with their constructor when they are imported
     Game.attachInterfaceToGfxProcessor(send_display_list)
