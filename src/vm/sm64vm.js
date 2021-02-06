@@ -9,8 +9,6 @@ import { LevelUpdateInstance as LevelUpdate } from "../game/LevelUpdate"
 import * as MarioConstants from "../game/constants/constants.json"
 import { CodeJar } from 'codejar'
 import Prism from 'prismjs';
-import * as express from "express"
-// import express from "express"
 
 const highlight = function(editor) {
     var code = editor.textContent;
@@ -101,16 +99,6 @@ export class SM64vm {
 
         this.vm.realm.global.camera = camera;
     }
-
-    setupCLI() {
-        var app = express()
-
-
-        app.post('/', function (req, res) {
-            res.send('POST request to the homepage')
-          })
-    }
-
 
     
     setupInterface() {
