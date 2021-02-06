@@ -839,7 +839,7 @@ class Mario {
         }
     }
 
-    update_mario_button_inputs = (m, playerInput) => {
+    update_mario_button_inputs (m, playerInput) {
         if (playerInput.buttonPressedA) m.input |= MarioInstance.INPUT_A_PRESSED
         if (playerInput.buttonDownA) m.input |= MarioInstance.INPUT_A_DOWN
         if (playerInput.buttonPressedB) m.input |= MarioInstance.INPUT_B_PRESSED
