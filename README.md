@@ -7,11 +7,15 @@ Beware; it is incredibly buggy and only one script can be executed during a sing
 
 ## Example script
 ```javascript
-keys.P.up(function() {
+mario.onActionChange = function(o, n) {
+    console.log("Changed action from " + o + " to " + n);
+}
+
+keys.P.up(function() { // On the release of the P key
     var pos = mario.getPosition();
     console.log("Old position: ", pos);
     
-    pos[1] = pos[1] + 50; // Add 50 units to Mario's height
+    pos[1] = pos[1] + 500; // Add 500 units to Mario's height
 
     console.log("New position: ", pos); 
     mario.setPosition(pos);
