@@ -3,6 +3,8 @@
 ## What?
 This is an attempt to build a scripting engine VM for the Javascript port of Super Mario 64.
 
+Beware; it is incredibly buggy and only one script can be executed during a single instance of the game. Refresh the website to run another.
+
 ## Example script
 ```javascript
 keys.P.up(function() {
@@ -17,7 +19,7 @@ keys.P.up(function() {
 ```
 
 ### Links
-[sm64js Github page](https://github.com/sm64js/sm64js)
+[sm64js](https://github.com/sm64js/sm64js)
 
 ## Build instructions - Windows, Mac, or Linux 
 
