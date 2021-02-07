@@ -34,7 +34,9 @@ export class SM64vm {
 
     addHelpers() {
         this.vm.realm.global.console = { log: this.consoleLog };
-        this.vm.realm.global.stringify = function(obj) { return JSON.stringify(obj); };
+        this.vm.realm.global.JSON = {
+            stringify: function(obj) { return JSON.stringify(obj); }
+        };
         this.vm.realm.global.cancel = hooker.preempt;
         var ref = this;
         this.vm.realm.global.setInterval = function(f, time) {
