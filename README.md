@@ -17,7 +17,6 @@ keys.P.up(function() {
 ```
 
 ### Links
-[sm64js main website](https://sm64js.com)
 [sm64js Github page](https://github.com/sm64js/sm64js)
 
 ## Build instructions - Windows, Mac, or Linux 
@@ -27,10 +26,23 @@ keys.P.up(function() {
 
 ### Run these commands
 ```bash
-# Clone the source code
-git clone https://github.com/leo-bc/sm64vm && cd sm64vm
-# Install node packages
+git clone https://github.com/leo-bc/sm64vm
+cd sm64vm
 npm install
-# Launch wepback dev server
 npm run start
 ```
+
+## API
+* `mario`
+  * `getPosition()` gets Mario's position in a truple of x, y and z
+  * `setPosition(position)` sets Mario's position to the truple `position`
+  * `getAction()` gets Mario's current action constant in string form
+  * `onActionChange` executes before Mario changes his action; should be set to a `function(oldAction, newAction)`
+* `camera`
+  * `activate(active)` set the camera active or inactive based on the `active` boolean value
+* `keys` direct reference to the `Keydrown` object/library that handles input: [API reference](https://jeremyckahn.github.io/keydrown/)
+
+The following (helper) functions have been implemented in the API:
+* `console.log()`
+* `JSON.stringify()`
+* `setInterval()`
