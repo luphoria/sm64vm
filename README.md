@@ -3,6 +3,8 @@
 ## What?
 This is an attempt to build a scripting engine VM for the Javascript port of Super Mario 64.
 
+A script text area and run button are now available on the website directly below the game.
+
 Beware; it is incredibly buggy and only one script can be executed during a single instance of the game. Refresh the website to run another.
 
 ## Example script
