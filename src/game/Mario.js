@@ -798,8 +798,8 @@ class Mario {
         if (LevelUpdate.gMarioState.action) {
 
             LevelUpdate.gMarioState.marioObj.header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE
-            mario_reset_bodystate(LevelUpdate.gMarioState)
-            update_mario_inputs(LevelUpdate.gMarioState)
+            MarioInstance.mario_reset_bodystate(LevelUpdate.gMarioState)
+            MarioInstance.update_mario_inputs(LevelUpdate.gMarioState)
             Interact.mario_handle_special_floors(LevelUpdate.gMarioState)
             Interact.mario_process_interactions(LevelUpdate.gMarioState)
 

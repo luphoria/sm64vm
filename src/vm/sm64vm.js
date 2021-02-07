@@ -61,8 +61,8 @@ export class SM64vm {
         var ref = this;
         var mario = {
             getPosition: function() { return LevelUpdate.gMarioState.pos; },
-            setPosition: function(x, y, z) {
-                LevelUpdate.gMarioState.pos = [0, 0, 0]; 
+            setPosition: function(position) {
+                LevelUpdate.gMarioState.pos = position; 
                 MarioStep.perform_air_step(LevelUpdate.gMarioState, 0);
              },
             getAction: function() { return LevelUpdate.gMarioState.action; },
