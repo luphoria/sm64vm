@@ -6,13 +6,13 @@ This is an attempt to build a scripting engine VM for the Javascript port of Sup
 ## Example script
 ```javascript
 keys.P.up(function() {
-	var pos = mario.getPosition();
-	
-	console.log("Old position: ", pos);
-	pos[1] = pos[1] + 50;
-	console.log("New position: ", pos); 
-	
-        mario.setPosition(pos);
+    var pos = mario.getPosition();
+    console.log("Old position: ", pos);
+    
+    pos[1] = pos[1] + 50; // Add 50 units to Mario's height
+
+    console.log("New position: ", pos); 
+    mario.setPosition(pos);
 });
 ```
 
