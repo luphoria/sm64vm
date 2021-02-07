@@ -1,7 +1,7 @@
 # sm64vm
 
 ## What?
-This is an attempt to build a scripting engine VM for the Javascript port of Super Mario 64.
+This is an attempt to build a scripting engine VM for the Javascript port of Super Mario 64. The scripting language of choice is also Javascript, meaning JS is embedded in JS in this project.
 
 A script text area and run button are now available on the website directly below the game.
 
